@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from skin import views as sk_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^template_tester",sk_views.new_time, name = "index"),
+    # url(r'^$',sk_views,name = "start_page"),
+    url(r'^skin_type/', include('skin.urls')),
+    # url(r"^template_tester",sk_views.new_time, name = "index"),
 ]
+

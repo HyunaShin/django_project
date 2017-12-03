@@ -4,8 +4,19 @@ from django.db import models
 class UserName(models.Model):
     user_name = models.CharField(primary_key=True, max_length=100)
 
+    def __str__(self):
+        return self.user_name
+
+class first_question(models.Model):
+    question = models.ForeignKey(UserName)
+
+
+########################################
 class Comment(models.Model):
     comment = models.TextField(max_length = 1000)
+
+    def __str__(self):
+        return self.comment
 
 class StarRate(models.Model):
     star_rate = models.TextField(max_length=1)
