@@ -4,30 +4,39 @@ from django.http import HttpResponse
 
 from django.http import HttpResponse
 # Create your views here.
-# from .models import Question
 
 
-def input_user_name(request):
+
+def userName(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Page_1.html')
+
+    all_username = None
+    if request.method == 'POST':
+        username = Username(
+            user_name=request.POST["user_name"]
+        )
+        username.save()
+        result = { "user_name": request.POST["user_name"]}
+
+        return render(request, 'Page_2.html', result)
+    else:
+        all_username = Username.objects.all()
+        result = {"user_name": all_username}
+        return render(request, 'Page_2.html', result)
+
+
+def results(request):
+    response = "%s님의 피부타입은"
+    return HttpResponse(response % username, 'Page_32.html')
+
+def post_comment(request):
     if request.method == "POST":
-        user_name = request.POST["user_name"]
-        request.session['user_name'] = user_name
-        print(request.session['user_name'])
-        return render(request,'final.html',{"user_name":user_name})
+        id = request.POST["username"]
+        comment = request.POST["comment"]
 
-# def results(request, question_id):
-#     response = "%s님의 피부타입은"
-#     return HttpResponse(response % user_name)
-#
-def index(requsest):
-    # question_list = question.objects
-    return HttpResponse("Hello, CodeSquad")
-def detail(request, question_id):
-    response = "Dettail Page id : %s"
-    return HttpResponse(response % question_id)
-
-def results(request, question_id):
-    response = "Question %s"
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("Vote Page: %s"% question_id)
+        comment = Comment.objects.create(comment_contents=comment,user=user,bookmark=bookmark)
+        print(comment.comment_contents)
+        comment.save()

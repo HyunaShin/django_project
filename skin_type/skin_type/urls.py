@@ -20,8 +20,9 @@ from skin import views as sk_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # url(r'^start', start_survey.site.urls),
     # url(r'^$',sk_views,name = "start_page"),
-    url(r'^skin_type/', include('skin.urls')),
-    # url(r"^template_tester",sk_views.new_time, name = "index"),
+    # url
+    # url(r"^$",sk_views.start_survey, name = "start_survey"),
+    url(r'^username$', sk_views.userName, name='userName'),
 ]
-
