@@ -1,0 +1,47 @@
+header {
+    text-align: left;
+}
+
+.p {
+    font-size: 200%;
+
+}
+
+
+
+.content {
+    width: 800px;
+    height: 500px;
+    text-align: center;
+    font-size: 160%;
+    border: solid;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+
+}
+
+
+button {
+    background-color: white;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 15px 45px;
+    font-size: 200%;
+    font-family: "Bitter",serif;
+    line-height: 1.8;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 25px;
+    padding: 20px;
+}
+button:focus {
+    outline: none
+}
+
+next {
+    alignment: right;
+}
