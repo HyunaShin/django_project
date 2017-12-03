@@ -11,7 +11,7 @@ def userName(request):
     try:
         email = request.session['login_id']
     except KeyError as e:
-        return render(request, 'Page_1.html')
+        return render(request, 'Q0.html')
 
     all_username = None
     if request.method == 'POST':
@@ -21,11 +21,11 @@ def userName(request):
         username.save()
         result = { "user_name": request.POST["user_name"]}
 
-        return render(request, 'Page_3html', result)
+        return render(request, 'Q1html', result)
     else:
         all_username = Username.objects.all()
         result = {"user_name": all_username}
-        return render(request, 'Page_3.html', result)
+        return render(request, 'Q1.html', result)
 
 def question_1(request):
     try:
