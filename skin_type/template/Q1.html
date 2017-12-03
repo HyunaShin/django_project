@@ -19,16 +19,21 @@
 
 
     <section class="skintype">
-        <button onclick="location.href = 'page_8.html'"> 네 </button>
+        <button onclick="location.href = 'Q6.html'"> 네 </button>
 
-        <button class="hover" onclick="location.href = 'page_4.html'"> 아니요</button>
-        <button class="hover" onclick="location.href = 'page_9.html'"> 모르겠다</button>
+        <button class="hover" onclick="location.href = 'Q2.html'"> 아니요</button>
+        <button class="hover" onclick="location.href = 'Q7.html'"> 모르겠다</button>
 
     </section>
 
 
-    <button onclick="location.href='Page_1.html'" type="back" class="btn-sm">
-        Back </button>
+    <button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
 
     <button onclick="location.href='Page_4.html'" type="next" class="btn-sm">
@@ -41,6 +46,4 @@
 </body>
 </html>
 
-
-<button onclick="goBack()">Go Back</button>
 
