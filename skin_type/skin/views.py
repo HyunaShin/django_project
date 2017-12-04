@@ -15,7 +15,7 @@ def userName(request):
 
     all_username = None
     if request.method == 'POST':
-        username = Username(
+        username = User_names(
             user_name=request.POST["user_name"]
         )
         username.save()
@@ -176,6 +176,36 @@ def question_25(request):
         email = request.session['login_id']
     except KeyError as e:
         return render(request, 'Q25.html')
+
+def question_26(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q26.html')
+
+def question_27(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q27.html')
+
+def question_28(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q28.html')
+
+def question_29(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q29.html')
+
+def question_30(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q30.html')
 
 def post_comment(request):
     if request.method == "POST":
