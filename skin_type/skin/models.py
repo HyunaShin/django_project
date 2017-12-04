@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class UserName(models.Model):
@@ -10,6 +11,7 @@ class UserName(models.Model):
 class Comment(models.Model):
     comment_id =  models.AutoField(primary_key=True)
     comment_contents = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_time = models.DateTimeField(auto_now_add=True)
 #
 # class first_question(models.Model):

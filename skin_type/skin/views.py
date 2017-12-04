@@ -177,7 +177,16 @@ def question_25(request):
     except KeyError as e:
         return render(request, 'Q25.html')
 
+def post_comment(request):
+    if request.method == "POST":
 
+        comment = request.POST["comment"]
+        user = request.session["user_name"]
+        comment = Comment.objects.create(comment_contents=comment)
+        print(comment.comment_contents)
+        comment.save()
+
+        return redirect("/bookmark_detail/" + id)
 
 
 
