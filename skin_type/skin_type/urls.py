@@ -19,7 +19,7 @@ from django.contrib import admin
 from skin import views as sk_views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls, name = 'admin'),
     url(r'^username$', sk_views.userName, name='userName'),
 
     url(r'^q1$', sk_views.question_1, name='question_1'),
@@ -47,7 +47,12 @@ urlpatterns = [
     url(r'^q23$', sk_views.question_23, name='question_23'),
     url(r'^q24$', sk_views.question_24, name='question_24'),
     url(r'^q25$', sk_views.question_25, name='question_25'),
-
+    url(r'^q26$', sk_views.question_26, name='question_26'),
+    url(r'^q27$', sk_views.question_27, name='question_27'),
+    url(r'^q28$', sk_views.question_28, name='question_28'),
+    url(r'^q29$', sk_views.question_29, name='question_29'),
+    url(r'^q30$', sk_views.question_30, name='question_30'),
+    url(r'^post_comment$', sk_views.post_comment, name='post_comment'),
     # url(r'^login$', sk_views.login, name='login')
 
 ]
