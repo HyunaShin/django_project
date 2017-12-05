@@ -10,22 +10,39 @@ from django.contrib.auth.models import User
 
 def userName(request):
     try:
+
         email = request.session['login_id']
+
     except KeyError as e:
+
         return render(request, 'Q0.html')
 
+
+
     all_username = None
+
     if request.method == 'POST':
-        username = userName(
-            user_name = request.POST["user_name"]
+
+        username = User_names(
+
+            user_name=request.POST["user_name"]
+
         )
+
         username.save()
+
         result = { "user_name": request.POST["user_name"]}
 
-        return render(request, 'Q1.html', result)
+
+
+        return render(request, 'Q1html', result)
+
     else:
-        all_username = userName.objects.all()
+
+        all_username = Username.objects.all()
+
         result = {"user_name": all_username}
+
         return render(request, 'Q1.html', result)
 
 def question_1(request):
@@ -178,16 +195,40 @@ def question_25(request):
     except KeyError as e:
         return render(request, 'Q25.html')
 
+def question_26(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q26.html')
+
+def question_27(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q27.html')
+
+def question_28(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q28.html')
+
+def question_29(request):
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'Q29.html')
+
 def question_30(request):
-    # try:
-    #     email = request.session['login_id']
-    # except KeyError as e:
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
         return render(request, 'q30.html')
 
 def comment_detail(request, comment_contents):
-    comment = Comment.objects.get(comment_contents = comment_contents)
-    # email = request.session["login_id"]
-    return render(request, 'q30.html', {"comment": comment_contents, "login_id":email})
+    comment = Comment.objects.get(comment_contents=comment_contents)
+    email = request.session["login_id"]
+    return render(request, 'q30.html', {"comment": comment_contents, "login_id": email})
 
 def post_comment(request):
     try:
@@ -202,13 +243,20 @@ def post_comment(request):
     comment.save()
     comments = Comment.objects.all()
 
-    return render(request,"q30.html", { "comments": comments})
-# "login_id": email,
-# def comment_list(request):
-#     try:
-#         email = request.session['login_id']
-#     except KeyError as e:
-#         return render(request, 'index.html')
+    return render(request, "q30.html", {"comments": comments})
+
+
+
+
+#
+# def results(request):
+#     response = "%s님의 피부타입은"
+#     return HttpResponse(response % username, 'Page_32.html')
+#
+# def post_comment(request):
+#     if request.method == "POST":
+#         id = request.POST["username"]
+#         comment = request.POST["comment"]
 #
 #     email = request.session["login_id"]
 #     return render(request, 'comment_detail.html', {"login_id": email})
