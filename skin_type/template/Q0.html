@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
 
-<html lang="en">
+{% block title %}
+    What_is_your_name
+{% endblock %}
+
+{% block content %}
+
+{#<!DOCTYPE html>#}
+
+{#<html lang="en">#}
 <head>
     <link rel="stylesheet" href="Q0.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -12,7 +21,7 @@
  <header> Skinny Company </header>
 
 <div class ='content'>
-z
+
     <p><bold> 당신의 피부타입은? </bold></p>
 
 
@@ -24,12 +33,11 @@ z
     </div>
 
     <section class="flat">
-<<<<<<< HEAD
+
 
         <button  onclick="location.href='Q1.html'" type="next" class="btn-sm"> Submit! </button>
-=======
-        <button  onclick="location.href='q1'" type="next" class="btn-sm"> Submit! </button>
->>>>>>> f94cda194136c991af0c74ab5a11d187d8e097cc
+
+
     </section>
 
 
@@ -38,3 +46,4 @@ z
 </div>
 </body>
 </html>
+{% endblock %}

@@ -1,30 +1,48 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, request
+from skin.models import Comment
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 
-
-from django.http import HttpResponse
 # Create your views here.
 
 
 
 def userName(request):
     try:
+
         email = request.session['login_id']
+
     except KeyError as e:
+
         return render(request, 'Q0.html')
 
+
+
     all_username = None
+
     if request.method == 'POST':
+
         username = User_names(
+
             user_name=request.POST["user_name"]
+
         )
+
         username.save()
+
         result = { "user_name": request.POST["user_name"]}
 
+
+
         return render(request, 'Q1html', result)
+
     else:
+
         all_username = Username.objects.all()
+
         result = {"user_name": all_username}
+
         return render(request, 'Q1.html', result)
 
 def question_1(request):
@@ -205,30 +223,27 @@ def question_30(request):
     try:
         email = request.session['login_id']
     except KeyError as e:
-        return render(request, 'Q30.html')
+        return render(request, 'q30.html')
+
+def comment_detail(request, comment_contents):
+    comment = Comment.objects.get(comment_contents=comment_contents)
+    email = request.session["login_id"]
+    return render(request, 'q30.html', {"comment": comment_contents, "login_id": email})
 
 def post_comment(request):
-    if request.method == "POST":
+    try:
+        email = request.session['login_id']
+    except KeyError as e:
+        return render(request, 'q30.html')
+    comment = request.POST.get("comment")
+    email = request.session['login_id']
+    user = User.objects.get(username=email)
+    comment = Comment(comment_contents=comment, user=user)
+    print(comment)
+    comment.save()
+    comments = Comment.objects.all()
 
-        comment = request.POST["comment"]
-        user = request.session["user_name"]
-        comment = Comment.objects.create(comment_contents=comment)
-        print(comment.comment_contents)
-        comment.save()
-
-        return redirect("/bookmark_detail/" + id)
-
-
-
-
-
-
-
-
-
-
-
-
+    return render(request, "q30.html", {"comments": comments})
 
 
 
@@ -243,6 +258,5 @@ def post_comment(request):
 #         id = request.POST["username"]
 #         comment = request.POST["comment"]
 #
-#         comment = Comment.objects.create(comment_contents=comment,user=user,bookmark=bookmark)
-#         print(comment.comment_contents)
-#         comment.save()
+#     email = request.session["login_id"]
+#     return render(request, 'comment_detail.html', {"login_id": email})
