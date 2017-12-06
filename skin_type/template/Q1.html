@@ -10,12 +10,38 @@
 
 
 <body>
-<header> Skinny Company </header>
+
+<div class="skinny">
+<header > Skinny Company </header>
 <progress value="2" max="100"></progress>
+</div>
 
 <div class ='content'>
 
-    <p><bold> 모공이 크지 않다? </bold></p>
+    <div class="question">
+    <p><bold > 모공이 크지 않다 </bold></p>
+    </div>
+
+
+
+    <section class="skintype">
+
+        <button> 네 </button>
+
+        <button class="hover"> 아니요</button>
+
+        <button> 모르겠다</button>
+    </section>
+
+    <button onclick="location.href='Q0.html'" type="back" class="btn-sm">
+        Back </button>
+
+
+    <button onclick="location.href='Q2.html'" type="next" class="btn-sm">
+        Next </button>
+
+
+<!--- The bootstrap buttons below were not opening the link, and i could not everything figure out so i made simple buttons above.
 
 
     <section class="skintype">
@@ -23,6 +49,9 @@
 
         <button class="hover" onclick="location.href = 'q2'"> 아니요</button>
         <button class="hover" onclick="location.href = 'q7'"> 모르겠다</button>
+--->
+
+<!--- it seems these codes were repeated. we ended up with too many buttons.
 
         <button onclick="location.href = 'Q6.html'"> 네 </button>
 
@@ -35,6 +64,7 @@
         <button class="hover" onclick="location.href = 'q9'"> 모르겠다</button>
 
     </section>
+
 
 
 
@@ -52,9 +82,10 @@ function goBack() {
 
 
 
-    <button onclick="location.href='Q4'" type="next" class="btn-sm">
+    <button onclick="location.href='Q4'" type="next" class="btn-sm"></button>
     <button onclick="location.href='q2'" type="next" class="btn-sm">
         Next </button>
+---->
 
     <script src="js/jquery-3.1.1.js"></script>
 
