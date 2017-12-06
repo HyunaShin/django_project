@@ -20,7 +20,7 @@ from skin import views as sk_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name = 'admin'),
-    url(r'^username$', sk_views.userName, name='userName'),
+    # url(r'^q0$', sk_views.userName, name='userName'),
     url(r'^q1$', sk_views.question_1, name='question_1'),
     url(r'^q2$', sk_views.question_2, name='question_2'),
     url(r'^q3$', sk_views.question_3, name='question_3'),
@@ -51,6 +51,7 @@ urlpatterns = [
     url(r'^q28$', sk_views.question_28, name='question_28'),
     url(r'^q29$', sk_views.question_29, name='question_29'),
     url(r'^q30$', sk_views.question_30, name='question_30'),
+    url(r'^(?P<comment_id>[0-9])$',sk_views.post_comment,name = "send_comment"),
     url(r'^post_comment$', sk_views.post_comment, name='post_comment'),
     # url(r'^login$', sk_views.login, name='login')
 

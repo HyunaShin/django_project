@@ -22,8 +22,9 @@
             <p> 코멘트를 입력하세요 </p>
         </div>
     </div>
-    <div class="panel">
-        {% for comment in comments %}
+    <div class="container">
+        <div class="panel">
+            {% for comment in comments %}
             <div class="media">
                 <a class="media-left" href="#">
                     <img src="http://lorempixel.com/40/40/people/1/">
@@ -41,20 +42,32 @@
         {% endfor %}
 
 
-    <div class="form-group row">
-        <form method="POST" action="{% url "post_comment" %}">
-            {% csrf_token %}
-            <div class="col-sm-1">
-                <label for="comment">Comment:</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" id="comment" name="comment" />
-            </div>
-            <div class="col-sm-3">
-                <button type="submit" class="btn btn-success">Post</button>
-            </div>
-        </form>
+        <div class="form-group row">
+            <form method="POST" action="{% url 'post_comment' %}">
+                {% csrf_token %}
+                <div class="col-sm-1">
+                    <label for="comment">Comment:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="comment" name="comment"/>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-success">Post</button>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <hr>
+{% for comment in post.comments.all %}
+    <div class="comment">
+        <div class="date">{{ comment.created_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
 
 
         <button class="btn-sm">Back </button>
