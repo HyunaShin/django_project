@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+{%load static%}
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Q0.css">
+
+    <link rel="stylesheet" type = "text/css" href="{% static 'skin_type/Q0.css' %}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <meta charset="UTF-8">
 
@@ -10,35 +11,37 @@
 
 
 <body>
+<div class="skinny">
 <header style="padding-left: 30px"> Skinny Company </header>
 <progress value="100" max="100"></progress>
+</div>
 <div class = "all">
     <div class ='content'>
 
-        <p class="heading"> 당신의 피부타입은 <b>일반</b> 입니다! </p>
-        <p class="about"> 20대부터 피부 초기노화를 예방해주는 마사지나 아이크림을 발라주며 나이의 변화에 따른 피부관리를 시작해 주어야합니다. 평소 정상 피부를 유지, 관리하는 노력이 필요합니다. 2주에 1번 정도 각질을 관리해 주는 팩을 하면 좋습니다.  </p><div class="form-group row">
-        <p><bold> 코멘트를 입력하세요 </bold></p>
-    </div>
-
-    <div class="form-group">
+        <h1> 당신의 피부타입은 <b>일반</b> 입니다! </h1>
+        <p class="about"> 20대부터 피부 초기노화를 예방해주는 마사지나 아이크림을 발라주며 나이의 변화에 따른 피부관리를 시작해 주어야합니다. 평소 정상 피부를 유지, 관리하는 노력이 필요합니다. 2주에 1번 정도 각질을 관리해 주는 팩을 하면 좋습니다.  </p>
+        <p>저희서비스는 어땠나요?</p>
+        <div class="form-group">
         {% csrf_token %}
         <form method="POST" action="{% url "post_comment_27" %}">
-            <div class="col-sm-10" align="center">
+            <div class="col-sm-10" align="left">
                 {% csrf_token %}
-                <input type = "text" class="form-control" rows="1" name="comment"></input>
-                <button type="submit" class="btn btn-success">Post</button>
+                <input type = "text" rows="1" name="comment" class ="form" align="left"></input><button type="submit" class="expand radius" align="right"> &nbsp; Post &nbsp;</button>
                 </div>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </form>
     </div>
 
-        <button onclick="location.href='Page_27.html'" type="back" class="btn-sm">
-            Back </button>
+        <button onclick="goBack()" class="btn-sm small_left add_padding" align = left>Go Back</button>
 
-
-        <button onclick="location.href='Page_29.html'" type="next" class="btn-sm">
-            Next </button>
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+        <button onclick="location.href='q1'" type="next" class="btn-sm small_right">
+        try again </button>
 
         <script src="js/jquery-3.1.1.js"></script>
 

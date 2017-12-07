@@ -11,7 +11,8 @@ header {
 
 .skinny {
     padding-left: 30px;
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 40px;
     font-weight: bold;
 }
 
@@ -19,8 +20,6 @@ header {
     font-size: 120%;
     text-decoration: none;
     padding-left: 250px;
-
-
 }
 .form-group {
     padding-top: 40px;
@@ -33,13 +32,13 @@ header {
 }
 
 .content {
-    width: 800px;
+    width: 1000px;
     height: 500px;
     text-align: center;
     font-size: 160%;
     border: solid;
     border-radius: 25px;
-     padding-top: 20px;
+    padding-top: 100px;
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -47,12 +46,10 @@ header {
 
 }
 
-
 button {
     background-color: white;
     display: inline-block;
      margin: 0 10px 0 0;
-    padding: 15px 45px;
     font-size: 200%;
     font-family: "Bitter",serif;
     line-height: 1.8;
@@ -60,7 +57,6 @@ button {
     box-shadow: none;
     border-radius: 25px;
     padding: 20px;
-
 }
 button:focus {
     outline: none
@@ -72,5 +68,45 @@ next {
 
 .skintype {
     padding-left: 100px;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
+}
+
+.radius{
+    border-radius: 5px;
+}
+.small_left{
+    margin-right : 450px;
+}
+.small_right{
+    margin-left: 350px;
+    }
+.mid_left{
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right : 120px;
+}
+.mid_right{
+    margin-top: 40px;
+    margin-left: 110px;
+    margin-right : 120px;
+}
+.mid_center{
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right : 0px;
+}
+.big_font{
+    font-size: 40px;
+}
+.very_big_font{
+    font-size: 70px;
+}
+.form{
+    padding:0px 100px  0px 0px;
+}
+.expand{
+    padding: 0px 5px 2px 5px;
+}
+.add_padding{
+    padding-right: 800px;
 }

@@ -1,52 +1,53 @@
-{% extends "base.html" %}
-{% load static %}
-{% block header %}Skinny Company{% endblock %}
-
-{% block content %}
+{%load static%}
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Q0.css">
+
+    <link rel="stylesheet" type = "text/css" href="{% static 'skin_type/Q0.css' %}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <meta charset="UTF-8">
 </head>
 <body>
- <progress value="100" max="100"></progress>#}
-    <div class = "all">
+<div class="skinny">
+<header> Skinny Company </header>
+<progress value="100" max="100"></progress>
+</div>
+<div class = "all">
         <div class ='content'>
 
-            <p class="heading"> 당신의 피부타입은 <b>민감성</b> 입니다! </p>
+            <h1 class="heading"> 당신의 피부타입은 <b>민감성</b> 입니다! </h1>
             <p class="about"> 피부가 건조해 매우 당기고, 따갑고, 화끈거리는 증상을
               쉽게 완화하는 방법은 가장 쉬운 방법이 자신에게 잘 맞는 보습제를 피부에
-            듬뿍 발라주는 것이다. 민감피부의 관리는 피부의 온도를 적당히 내려주고 수분을
-          충분히 보충해주는 것이 중요하다. </p>
+            듬뿍 발라주는 것입니다. 민감피부의 관리는 피부의 온도를 적당히 내려주고 수분을
+          충분히 보충해주는 것이 중요합니다. </p>
 
-           <p><bold> 코멘트를 입력하세요 </bold></p>
+           <p><bold> 저희 서비스는 어땠나요? </bold></p>
 
     <div class="form-group">
         {% csrf_token %}
         <form method="POST" action="{% url "post_comment_30" %}">
-            <div class="col-sm-10" align="center">
+            <div class="col-sm-10" align="left">
                 {% csrf_token %}
-                <input type = "text" class="form-control" rows="1" name="comment"></input>
-                <button type="submit" class="btn btn-success">Post</button>
+                <input type = "text" rows="1" name="comment" class ="form" align="left"></input><button type="submit" class="expand radius" align="right"> &nbsp; Post &nbsp;</button>
                 </div>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </form>
-</div>
+        </form>
+    </div>
+            <button onclick="goBack()" class="btn-sm small_left add_padding" align = left>Go Back</button>
 
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+        <button onclick="location.href='q1'" type="next" class="btn-sm small_right">
+        try again </button>
 
-        <button class="btn-sm">Back </button>
-         <button class="btn-sm">Next </button>
+    <script src="js/jquery-3.1.1.js"></script>
 
+    <script src="js/bootstrap.min.js"></script>
 
-
-        <script src="js/jquery-3.1.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-
-{% endblock %}
-{% block footer %}ended{% endblock %}
         </div>
     </div>
 </body>

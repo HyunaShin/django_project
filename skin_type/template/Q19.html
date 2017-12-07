@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+{%load static%}
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Q0.css">
+
+    <link rel="stylesheet" type = "text/css" href="{% static 'skin_type/Q0.css' %}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <meta charset="UTF-8">
 
@@ -17,18 +18,18 @@
 
 <div class ='content'>
 
-    <p><bold> T존 부위만 화장이 잘 지워진다</bold></p>
+    <p class="big_font"><bold> T존 부위만 화장이 잘 지워진다</bold></p>
 
 
 
     <section class="skintype">
-        <button onclick="location.href='q24'"> 네 </button>
+        <button onclick="location.href='q24'" class="hover radius mid_left">&nbsp;&nbsp;네&nbsp;&nbsp;</button>
 
-        <button class="hover" onclick="location.href='q20'"> 아니요</button>
+        <button class="hover radius mid_right" onclick="location.href='q20'"> 아니요</button>
 
     </section>
 
-    <button onclick="goBack()">Go Back</button>
+    <button onclick="goBack()" class="btn-sm small_left">Go Back</button>
 
     <script>
     function goBack() {
@@ -36,7 +37,7 @@
     }
     </script>
 
-    <button onclick="location.href='q20'" type="next" class="btn-sm">
+    <button onclick="location.href='q20'" type="next" class="btn-sm small_right">
         Next </button>
 
     <script src="js/jquery-3.1.1.js"></script>
