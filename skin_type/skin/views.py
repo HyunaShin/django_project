@@ -131,7 +131,7 @@ def post_comment_26(request):
         comment = Comment(comment_contents=comment)
         comment.save()
 
-        return HttpResponseRedirect(reverse('question_1'))
+        return HttpResponseRedirect(reverse('question_31'))
 
 def question_27(request):
 
@@ -153,7 +153,7 @@ def post_comment_27(request):
         comment = Comment(comment_contents=comment)
         comment.save()
 
-        return HttpResponseRedirect(reverse('question_1'))
+        return HttpResponseRedirect(reverse('question_31'))
 
 def question_28(request):
 
@@ -174,7 +174,7 @@ def post_comment_28(request):
         comment = Comment(comment_contents=comment)
         comment.save()
 
-        return HttpResponseRedirect(reverse('question_1'))
+        return HttpResponseRedirect(reverse('question_31'))
 
 def question_29(request):
 
@@ -195,7 +195,7 @@ def post_comment_29(request):
         comment = Comment(comment_contents=comment)
         comment.save()
 
-        return HttpResponseRedirect(reverse('question_1'))
+        return HttpResponseRedirect(reverse('question_31'))
 
 def question_30(request):
 
@@ -217,5 +217,10 @@ def post_comment_30(request):
         comment = Comment(comment_contents=comment)
         comment.save()
 
-        return HttpResponseRedirect(reverse('question_1'))
+        return HttpResponseRedirect(reverse('question_31'))
+
+def question_31(request):
+
+    return render(request, 'q31.html')
+
 
