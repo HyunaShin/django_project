@@ -140,7 +140,7 @@ def question_26(request):
 
         return render(request, 'Q26.html')
 
-def comment_detail(request, comment_contents):
+def comment_detail_26(request, comment_contents):
     comment = Comment.objects.get(comment_contents=comment_contents)
 
     return render(request, 'q26.html', {"comment": comment })
@@ -161,17 +161,18 @@ def post_comment_26(request):
 def question_27(request):
 
         return render(request, 'Q27.html')
-def comment_detail(request, comment_contents):
+
+def comment_detail_27(request, comment_contents):
     comment = Comment.objects.get(comment_contents=comment_contents)
 
     return render(request, 'q27.html', {"comment": comment })
 
-def post_comment(request):
+def post_comment_27(request):
     try:
         comment = request.POST["comment"]
 
     except KeyError as e:
-        return render(request, 'q30.html')
+        return render(request, 'q27.html')
 
     else:
         comment = Comment(comment_contents=comment)
@@ -182,17 +183,17 @@ def post_comment(request):
 def question_28(request):
 
         return render(request, 'Q28.html')
-def comment_detail(request, comment_contents):
+def comment_detail_28(request, comment_contents):
     comment = Comment.objects.get(comment_contents=comment_contents)
 
     return render(request, 'q28.html', {"comment": comment })
 
-def post_comment(request):
+def post_comment_28(request):
     try:
         comment = request.POST["comment"]
 
     except KeyError as e:
-        return render(request, 'q30.html')
+        return render(request, 'q28.html')
 
     else:
         comment = Comment(comment_contents=comment)
@@ -203,17 +204,17 @@ def post_comment(request):
 def question_29(request):
 
         return render(request, 'Q29.html')
-def comment_detail(request, comment_contents):
+def comment_detail_29(request, comment_contents):
     comment = Comment.objects.get(comment_contents=comment_contents)
 
     return render(request, 'q29.html', {"comment": comment })
 
-def post_comment(request):
+def post_comment_29(request):
     try:
         comment = request.POST["comment"]
 
     except KeyError as e:
-        return render(request, 'q30.html')
+        return render(request, 'q29.html')
 
     else:
         comment = Comment(comment_contents=comment)
@@ -225,12 +226,12 @@ def question_30(request):
 
         return render(request, 'q30.html')
 
-def comment_detail(request, comment_contents):
+def comment_detail_30(request, comment_contents):
     comment = Comment.objects.get(comment_contents=comment_contents)
 
     return render(request, 'q30.html', {"comment": comment })
 
-def post_comment(request):
+def post_comment_30(request):
     try:
         comment = request.POST["comment"]
 

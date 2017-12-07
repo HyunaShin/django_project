@@ -24,40 +24,18 @@
 
         <p><bold> 코멘트를 입력하세요 </bold></p>
 
-     <div class="panel">
-        {% for comment in comments %}
-            <div class="media">
-                <a class="media-left" href="#">
-                    <img src="http://lorempixel.com/40/40/people/1/">
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading user_name">{{ comment.user.username }}</h4>
-                        {{ comment.comment_contents}}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-
-        {% for comment in comments %}
-            {{ comment.comment_contents }}
-        {% endfor %}
-
-
-    <div class="form-group row">
-        <form method="POST" action="{% url "post_comment" %}">
-            {% csrf_token %}
-            <div class="col-sm-1">
-                <label for="comment">Comment:</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" id="comment" name="comment" />
-            </div>
-            <div class="col-sm-3">
+    <div class="form-group">
+        {% csrf_token %}
+        <form method="POST" action="{% url "post_comment_29" %}">
+            <div class="col-sm-10" align="center">
+                {% csrf_token %}
+                <input type = "text" class="form-control" rows="1" name="comment"></input>
                 <button type="submit" class="btn btn-success">Post</button>
-            </div>
-        </form>
-    </div>
+                </div>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </form>
+</div>
 
         <button class="btn-sm">Back </button>
          <button class="btn-sm">Next </button>
@@ -66,6 +44,9 @@
 
         <script src="js/jquery-3.1.1.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
+    </div>
+</div>
+</body>
+</html>
 {% endblock %}
 {% block footer %}ended{% endblock %}
