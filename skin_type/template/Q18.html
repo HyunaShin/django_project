@@ -15,29 +15,30 @@
 <progress value="73" max="100"></progress>
 </div>
 
-<div class ='content'>
-    <div class="question">
-    <p><bold> 화장이 잘 지워지고 유분이 많다 </bold></p>
-    </div>
+<<div class ='content'>
+
+    <p><bold> 화장이 잘 지워지고 유분이 많다? </bold></p>
 
 
 
-   <section class="skintype">
+    <section class="skintype">
+        <button onclick="location.href='q23'"> 네 </button>
 
-        <button> 네 </button>
+        <button class="hover" onclick="location.href='q19'"> 아니요</button>
 
-        <button class="hover"> 아니요</button>
-
-        <button> 모르겠다</button>
+        <button onclick="location.href='q24'"> 모르겠다</button>
     </section>
 
-    <button onclick="location.href='Q17.html'" type="back" class="btn-sm">
-        Back </button>
+    <button onclick="goBack()">Go Back</button>
 
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
 
-    <button onclick="location.href='Q19.html'" type="next" class="btn-sm">
+    <button onclick="location.href='q19'" type="next" class="btn-sm">
         Next </button>
-
 
     <script src="js/jquery-3.1.1.js"></script>
 

@@ -16,26 +16,29 @@
 </div>
 
 <div class ='content'>
-    <div class="question">
-    <p><bold> 피부에 윤기가 없다 </bold></p>
-    </div>
 
-     <section class="skintype">
+    <p><bold> 피부에 윤기가 없다? </bold></p>
 
-        <button> 네 </button>
 
-        <button class="hover"> 아니요</button>
 
-        <button> 모르겠다</button>
+    <section class="skintype">
+        <button onclick="location.href='q21'"> 네 </button>
+
+        <button class="hover" onclick="location.href='q17'"> 아니요</button>
+
+        <button onclick="location.href='q22'"> 모르겠다</button>
     </section>
 
-    <button onclick="location.href='Q15.html'" type="back" class="btn-sm">
-        Back </button>
+    <button onclick="goBack()">Go Back</button>
 
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
 
     <button onclick="location.href='Q17.html'" type="next" class="btn-sm">
         Next </button>
-
 
     <script src="js/jquery-3.1.1.js"></script>
 
