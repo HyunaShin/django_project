@@ -6,34 +6,9 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 # Create your views here.
 
-# def userName(request):
-#
-#     return(request,'q0.html')
-# def is_logged(request):
-#     all_username = None
-#     if request.method == 'POST':
-#         # username = User_names(
-#         user_name=request.POST["user_name"]
-#         print(user_name)
-#     return render(request,'q1.html')
-#         # )
-#
-#         username.save()
-#
-#         result = { "user_name": request.POST["user_name"]}
-#
-#
-#
-#         return render(request, 'Q0.html', result)
-#
-#     else:
-#
-#         all_username = Username.objects.all()
-#
-#         result = {"user_name": all_username}
-#
-#         return render(request, 'Q0.html', result)
+def question_0(request):
 
+    return render(request, 'Q0.html')
 def question_1(request):
     # try:
     #     email = request.session['login_id']

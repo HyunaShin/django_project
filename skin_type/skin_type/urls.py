@@ -20,7 +20,7 @@ from skin import views as sk_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name = 'admin'),
-    # url(r'^q0$', sk_views.userName, name='userName'),
+    url(r'^q0$', sk_views.question_0, name='question_0'),
     url(r'^q1$', sk_views.question_1, name='question_1'),
     url(r'^q2$', sk_views.question_2, name='question_2'),
     url(r'^q3$', sk_views.question_3, name='question_3'),
