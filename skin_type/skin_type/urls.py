@@ -52,6 +52,7 @@ urlpatterns = [
     url(r'^q29$', sk_views.question_29, name='question_29'),
     url(r'^q30$', sk_views.question_30, name='question_30'),
     url(r'^(?P<comment_id>[0-9])$',sk_views.post_comment,name = "send_comment"),
+    url(r'^post_comment_26$', sk_views.post_comment_26, name='post_comment'),
     url(r'^post_comment$', sk_views.post_comment, name='post_comment'),
     # url(r'^login$', sk_views.login, name='login')
 

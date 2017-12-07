@@ -145,12 +145,12 @@ def comment_detail(request, comment_contents):
 
     return render(request, 'q26.html', {"comment": comment })
 
-def post_comment(request):
+def post_comment_26(request):
     try:
         comment = request.POST["comment"]
 
     except KeyError as e:
-        return render(request, 'q0.html')
+        return render(request, 'q26.html')
 
     else:
         comment = Comment(comment_contents=comment)
