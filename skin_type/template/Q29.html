@@ -11,19 +11,21 @@
 
 
 <body>
+<div class="skinny">
 <header style="padding-left: 30px"> Skinny Company </header>
 <progress value="100" max="100"></progress>
+</div>
 <div class = "all">
     <div class ='content'>
 
-        <h1 class="heading"> 당신의 피부타입은 <b>복합성</b> 입니다! </h1>
-        <p class="about"> 자외선은 피부 초기노화의 가장 큰 원인이 되므로 자외선 차단제의 적절한 사용은 아주 중요합니다. 코와 이마는 지성 피부용 에센스를 꾸준히 사용하고, 피지를 제거할 수 있는 팩을 1주 1~2회정도 꾸준히 사용합니다. </p>
+        <h1> 당신의 피부타입은 <b>복합성</b> 입니다! </h1>
+        <p style="font-size: 20px">자외선은 피부 초기노화의 가장 큰 원인이 되므로 자외선 차단제의 적절한 사용은 아주 중요합니다. 코와 이마는 지성 피부용 에센스를 꾸준히 사용하고, 피지를 제거할 수 있는 팩을 1주 1~2회정도 꾸준히 사용합니다. </p>
 
         <p><bold> 저희 서비스는 어땠나요? </bold></p>
 
-    <div class="form-group" align="center">
+     <div class="form-group">
         {% csrf_token %}
-        <form method="POST" action="{% url "post_comment_29" %}">
+        <form method="POST" action="{% url "post_comment_28" %}">
             <div class="col-sm-10" align="left">
                 {% csrf_token %}
                 <input type = "text" rows="1" name="comment" class ="form" align="left"></input><button type="submit" class="expand radius" align="right"> &nbsp; Post &nbsp;</button>
@@ -31,24 +33,22 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </form>
-</div>
-
-       <button onclick="goBack()" class="btn-sm small_left add_padding">Go Back</button>
+    </div>
+        <button onclick="goBack()" class="btn-sm small_left add_padding" align = left>Go Back</button>
 
     <script>
     function goBack() {
         window.history.back();
     }
     </script>
-
         <button onclick="location.href='q1'" type="next" class="btn-sm small_right">
         try again </button>
+    </div>
 
 
     <script src="js/jquery-3.1.1.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
-    </div>
 </div>
 </body>
 </html>
