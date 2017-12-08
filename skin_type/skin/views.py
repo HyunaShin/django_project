@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 # Create your views here.
 
-def question_0(request):
+def Index(request):
+    return render(request, 'index.html')
 
-    return render(request, 'Q0.html')
 def question_1(request):
     # try:
     #     email = request.session['login_id']

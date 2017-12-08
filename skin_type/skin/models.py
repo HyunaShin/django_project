@@ -5,5 +5,4 @@ import datetime
 
 
 class Comment(models.Model):
-
     comment_contents = models.CharField(primary_key=True, max_length = 500)
